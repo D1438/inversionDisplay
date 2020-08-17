@@ -10,6 +10,11 @@ import UIKit
 
 class showWatchViewController: UIViewController {
 
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,15 +23,26 @@ class showWatchViewController: UIViewController {
     }
     
     let dt = Date()
-    let dateFormatter = DateFormatter()
+    let year = DateFormatter()
+    let month = DateFormatter()
     let locateData = Locale(identifier: "ja_JP")
     
     
     @IBAction func oshiteButton(_ sender: UIButton) {
         print("押されたよ！")
-        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyyMMddHmsEE", options: 0, locale: locateData)
-        print(dateFormatter.string(from: dt))
+        
+        reloadDate()
+        reloadLabel()
     }
     
-
+    func reloadDate() {
+        year.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy", options: 0, locale: locateData)
+        month.dateFormat = DateFormatter.dateFormat(fromTemplate: "M", options: 0, locale: locateData)
+    }
+    
+    func reloadLabel() {
+        
+        yearLabel.text = year.string(from: dt)
+        monthLabel.text = month.string(from: dt)
+    }
 }
