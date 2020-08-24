@@ -10,23 +10,40 @@ import UIKit
 
 class showWatchViewController: UIViewController {
 
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "時計"
-        // Do any additional setup after loading the view.
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(reloadDate), userInfo: nil, repeats: true)
     }
-    
-    let dt = Date()
-    let dateFormatter = DateFormatter()
-    let locateData = Locale(identifier: "ja_JP")
     
     
     @IBAction func oshiteButton(_ sender: UIButton) {
         print("押されたよ！")
-        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyyMMddHmsEE", options: 0, locale: locateData)
-        print(dateFormatter.string(from: dt))
+
     }
     
-
+    
+    @objc func reloadDate() {
+        let dateFormatter = DateFormatter()
+        let dt = Date()
+        let locateData = Locale(identifier: "ja_JP")
+//        年数に代入
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyyMMdd", options: 0, locale: locateData)
+        dateLabel.text = dateFormatter.string(from: dt)
+        
+        
+//        時数に代入
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HHmmss", options: 0, locale: locateData)
+        timeLabel.text = dateFormatter.string(from: dt)
+        
+        
+        print(dateFormatter.string(from: dt))
+        print("update")
+    }
 }
