@@ -15,6 +15,9 @@
 		38106BB324DBAB7D00741975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38106BB124DBAB7D00741975 /* LaunchScreen.storyboard */; };
 		386D5A8D24E703A50060E0D4 /* showWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D5A8C24E703A50060E0D4 /* showWatchViewController.swift */; };
 		387EBB6924DE0EB20049CD24 /* showWatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387EBB6824DE0EB20049CD24 /* showWatch.storyboard */; };
+		389F558E24F3844A005A0DAD /* Stroke-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 389F558B24F38449005A0DAD /* Stroke-Bold.otf */; };
+		389F558F24F3844A005A0DAD /* Stroke-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 389F558C24F38449005A0DAD /* Stroke-Light.otf */; };
+		389F559024F3844A005A0DAD /* Stroke-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 389F558D24F38449005A0DAD /* Stroke-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		38106BB424DBAB7D00741975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		386D5A8C24E703A50060E0D4 /* showWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showWatchViewController.swift; sourceTree = "<group>"; };
 		387EBB6824DE0EB20049CD24 /* showWatch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = showWatch.storyboard; sourceTree = "<group>"; };
+		389F558B24F38449005A0DAD /* Stroke-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stroke-Bold.otf"; sourceTree = "<group>"; };
+		389F558C24F38449005A0DAD /* Stroke-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stroke-Light.otf"; sourceTree = "<group>"; };
+		389F558D24F38449005A0DAD /* Stroke-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stroke-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,9 @@
 				38106BAF24DBAB7D00741975 /* Assets.xcassets */,
 				38106BB124DBAB7D00741975 /* LaunchScreen.storyboard */,
 				38106BB424DBAB7D00741975 /* Info.plist */,
+				389F558B24F38449005A0DAD /* Stroke-Bold.otf */,
+				389F558C24F38449005A0DAD /* Stroke-Light.otf */,
+				389F558D24F38449005A0DAD /* Stroke-Regular.otf */,
 			);
 			path = inversionDisplay;
 			sourceTree = "<group>";
@@ -139,9 +148,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				389F558E24F3844A005A0DAD /* Stroke-Bold.otf in Resources */,
 				38106BB324DBAB7D00741975 /* LaunchScreen.storyboard in Resources */,
 				38106BB024DBAB7D00741975 /* Assets.xcassets in Resources */,
 				38106BAE24DBAB7900741975 /* Main.storyboard in Resources */,
+				389F558F24F3844A005A0DAD /* Stroke-Light.otf in Resources */,
+				389F559024F3844A005A0DAD /* Stroke-Regular.otf in Resources */,
 				387EBB6924DE0EB20049CD24 /* showWatch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
