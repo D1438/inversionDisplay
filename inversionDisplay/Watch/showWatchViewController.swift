@@ -21,6 +21,8 @@ class showWatchViewController: UIViewController {
     @IBOutlet weak var slashLabel: UILabel!
     @IBOutlet weak var slash2Label: UILabel!
     
+    let formatter = DateFormatter()
+    let locateData = Locale(identifier: "ja_JP")
     
     
     override func viewDidLoad() {
@@ -41,25 +43,27 @@ class showWatchViewController: UIViewController {
     
     @objc func reloadDate() {
 //        DateFormatter、Dateのインスタンス生成
-        let formatter = DateFormatter()
         let dt = Date()
-        let locateData = Locale(identifier: "ja_JP")
         
 //        年数に代入
-        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy", options: 0, locale: locateData)
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "y", options: 0, locale: locateData)
             yearLabel.text = formatter.string(from: dt)
+        yearLabel.text = yearLabel.text?.replacingOccurrences(of: "年",with: "")
         
 //        月数に代入
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "MM", options: 0, locale: locateData)
             monthLabel.text = formatter.string(from: dt)
+        monthLabel.text = monthLabel.text?.replacingOccurrences(of: "月",with: "")
         
 //        日数に代入
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "dd", options: 0, locale: locateData)
             dayLabel.text = formatter.string(from: dt)
+        dayLabel.text = dayLabel.text?.replacingOccurrences(of: "日",with: "")
         
 //        時数に代入
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH", options: 0, locale: locateData)
         hourLabel.text = formatter.string(from: dt)
+        hourLabel.text = hourLabel.text?.replacingOccurrences(of: "時",with: "")
         
 //        分数に代入
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "mm", options: 0, locale: locateData)
@@ -114,5 +118,9 @@ class showWatchViewController: UIViewController {
         coron2Label.font = UIFont(name: "Stroke-Light", size: 50.0)
         slashLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
         slash2Label.font = UIFont(name: "Stroke-Light", size: 30.0)
+    }
+    
+    func removeString(){
+        
     }
 }
