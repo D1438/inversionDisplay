@@ -23,6 +23,7 @@ class showWatchViewController: UIViewController {
     
     let formatter = DateFormatter()
     let locateData = Locale(identifier: "ja_JP")
+    var secondStr: String! = "0"
     
     
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ class showWatchViewController: UIViewController {
         view.backgroundColor = UIColor.black
 
         title = "時計"
-
+        
         changeFont()
         disappearLabel()
         
@@ -44,6 +45,8 @@ class showWatchViewController: UIViewController {
     @objc func reloadDate() {
 //        DateFormatter、Dateのインスタンス生成
         let dt = Date()
+        var minuteStr: String = "0"
+        var secondStr: String = "0"
         
 //        年数に代入
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "y", options: 0, locale: locateData)
@@ -67,12 +70,23 @@ class showWatchViewController: UIViewController {
         
 //        分数に代入
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "mm", options: 0, locale: locateData)
-        minutesLabel.text = formatter.string(from: dt)
+        if formatter.string(from: dt).count == 1 {
+            minuteStr.append(formatter.string(from: dt))
+            minutesLabel.text = minuteStr
+            print(minuteStr)
+        } else {
+            minutesLabel.text = formatter.string(from: dt)
+        }
         
 //        秒数に代入
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ss", options: 0, locale: locateData)
-        secondLabel.text = formatter.string(from: dt)
-        
+        if formatter.string(from: dt).count == 1 {
+            secondStr.append(formatter.string(from: dt))
+            secondLabel.text = secondStr
+            print(secondStr)
+        } else {
+            secondLabel.text = formatter.string(from: dt)
+        }
         
         coronLabel.text = "："
         coron2Label.text = "："
@@ -111,11 +125,11 @@ class showWatchViewController: UIViewController {
         yearLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
         monthLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
         dayLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
-        hourLabel.font = UIFont(name: "Stroke-Light", size: 50.0)
-        minutesLabel.font = UIFont(name: "Stroke-Light", size: 50.0)
-        secondLabel.font = UIFont(name: "Stroke-Light", size: 50.0)
-        coronLabel.font = UIFont(name: "Stroke-Light", size: 50.0)
-        coron2Label.font = UIFont(name: "Stroke-Light", size: 50.0)
+        hourLabel.font = UIFont(name: "Stroke-Light", size: 90.0)
+        minutesLabel.font = UIFont(name: "Stroke-Light", size: 90.0)
+        secondLabel.font = UIFont(name: "Stroke-Light", size: 90.0)
+        coronLabel.font = UIFont(name: "Stroke-Light", size: 90.0)
+        coron2Label.font = UIFont(name: "Stroke-Light", size: 90.0)
         slashLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
         slash2Label.font = UIFont(name: "Stroke-Light", size: 30.0)
     }
