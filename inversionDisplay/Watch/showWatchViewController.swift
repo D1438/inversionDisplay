@@ -45,6 +45,7 @@ class showWatchViewController: UIViewController {
     @objc func reloadDate() {
 //        DateFormatter、Dateのインスタンス生成
         let dt = Date()
+        var hourStr: String = "0"
         var minuteStr: String = "0"
         var secondStr: String = "0"
         
@@ -65,7 +66,13 @@ class showWatchViewController: UIViewController {
         
 //        時数に代入
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH", options: 0, locale: locateData)
-        hourLabel.text = formatter.string(from: dt)
+        if formatter.string(from: dt).count == 2 {
+            hourStr.append(formatter.string(from: dt))
+            hourLabel.text = hourStr
+            print(hourStr)
+        } else {
+            hourLabel.text = formatter.string(from: dt)
+        }
         hourLabel.text = hourLabel.text?.replacingOccurrences(of: "時",with: "")
         
 //        分数に代入
@@ -125,11 +132,11 @@ class showWatchViewController: UIViewController {
         yearLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
         monthLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
         dayLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
-        hourLabel.font = UIFont(name: "Stroke-Light", size: 90.0)
-        minutesLabel.font = UIFont(name: "Stroke-Light", size: 90.0)
-        secondLabel.font = UIFont(name: "Stroke-Light", size: 90.0)
-        coronLabel.font = UIFont(name: "Stroke-Light", size: 90.0)
-        coron2Label.font = UIFont(name: "Stroke-Light", size: 90.0)
+        hourLabel.font = UIFont(name: "Stroke-Light", size: 95.0)
+        minutesLabel.font = UIFont(name: "Stroke-Light", size: 95.0)
+        secondLabel.font = UIFont(name: "Stroke-Light", size: 95.0)
+        coronLabel.font = UIFont(name: "Stroke-Light", size: 95.0)
+        coron2Label.font = UIFont(name: "Stroke-Light", size: 95.0)
         slashLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
         slash2Label.font = UIFont(name: "Stroke-Light", size: 30.0)
     }
