@@ -14,6 +14,7 @@
 		38106BB024DBAB7D00741975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38106BAF24DBAB7D00741975 /* Assets.xcassets */; };
 		38106BB324DBAB7D00741975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38106BB124DBAB7D00741975 /* LaunchScreen.storyboard */; };
 		386D5A8D24E703A50060E0D4 /* showWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D5A8C24E703A50060E0D4 /* showWatchViewController.swift */; };
+		3879E7062531D9F300B25B36 /* editViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3879E7052531D9F300B25B36 /* editViewController.swift */; };
 		387EBB6924DE0EB20049CD24 /* showWatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387EBB6824DE0EB20049CD24 /* showWatch.storyboard */; };
 		389F558E24F3844A005A0DAD /* Stroke-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 389F558B24F38449005A0DAD /* Stroke-Bold.otf */; };
 		389F558F24F3844A005A0DAD /* Stroke-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 389F558C24F38449005A0DAD /* Stroke-Light.otf */; };
@@ -30,6 +31,7 @@
 		38106BB224DBAB7D00741975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38106BB424DBAB7D00741975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		386D5A8C24E703A50060E0D4 /* showWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showWatchViewController.swift; sourceTree = "<group>"; };
+		3879E7052531D9F300B25B36 /* editViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
 		387EBB6824DE0EB20049CD24 /* showWatch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = showWatch.storyboard; sourceTree = "<group>"; };
 		389F558B24F38449005A0DAD /* Stroke-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stroke-Bold.otf"; sourceTree = "<group>"; };
 		389F558C24F38449005A0DAD /* Stroke-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stroke-Light.otf"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				387EBB6824DE0EB20049CD24 /* showWatch.storyboard */,
 				386D5A8C24E703A50060E0D4 /* showWatchViewController.swift */,
+				3879E7052531D9F300B25B36 /* editViewController.swift */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				38106BAB24DBAB7900741975 /* ViewController.swift in Sources */,
 				38106BA724DBAB7900741975 /* AppDelegate.swift in Sources */,
 				38106BA924DBAB7900741975 /* SceneDelegate.swift in Sources */,
+				3879E7062531D9F300B25B36 /* editViewController.swift in Sources */,
 				386D5A8D24E703A50060E0D4 /* showWatchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

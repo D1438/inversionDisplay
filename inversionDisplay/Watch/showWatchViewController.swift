@@ -8,7 +8,7 @@
 
 import UIKit
 
-class showWatchViewController: UIViewController {
+class showWatchViewController: UIViewController, UIGestureRecognizerDelegate{
 
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
@@ -20,24 +20,35 @@ class showWatchViewController: UIViewController {
     @IBOutlet weak var coron2Label: UILabel!
     @IBOutlet weak var slashLabel: UILabel!
     @IBOutlet weak var slash2Label: UILabel!
+
     
     let formatter = DateFormatter()
     let locateData = Locale(identifier: "ja_JP")
     var secondStr: String! = "0"
-    
+    var editItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.black
+        self.overrideUserInterfaceStyle = .dark
 
         title = "時計"
         
         changeFont()
         disappearLabel()
         
+        editItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(segueEdit))
+        self.navigationItem.rightBarButtonItem = editItem
+        
         Timer.scheduledTimer(timeInterval: 1.1, target: self, selector: #selector(appearLabel), userInfo: nil, repeats: false)
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(reloadDate), userInfo: nil, repeats: true)
+        
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
+                    target: self,
+                    action: #selector(tappedChangeFont))
+        
+        tapGesture.delegate = self
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     
@@ -128,6 +139,10 @@ class showWatchViewController: UIViewController {
         slash2Label.isHidden = false
     }
     
+    @objc func tappedChangeFont() {
+        
+    }
+    
     func changeFont() {
         yearLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
         monthLabel.font = UIFont(name: "Stroke-Light", size: 30.0)
@@ -141,7 +156,7 @@ class showWatchViewController: UIViewController {
         slash2Label.font = UIFont(name: "Stroke-Light", size: 30.0)
     }
     
-    func removeString(){
-        
+    @objc func segueEdit() {
+        self.performSegue(withIdentifier: "toEdit", sender: self)
     }
 }
