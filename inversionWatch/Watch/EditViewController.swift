@@ -8,7 +8,7 @@
 
 import UIKit
 
-class editViewController: UIViewController {
+class EditViewController: UIViewController {
     
     @IBOutlet weak var fontChengeLabel: UILabel!
     @IBOutlet weak var fontChangeSwitcher: UISwitch!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class showWatchViewController: UIViewController, UIGestureRecognizerDelegate{
+class ShowWatchViewController: UIViewController, UIGestureRecognizerDelegate{
 
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
